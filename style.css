@@ -1005,7 +1005,6 @@ h1 span{
 
   .about-image{
     min-height:430px;
-   
   }
 
   .about-frame{
@@ -3030,60 +3029,175 @@ body{
   }
 }
 
-/* SMALLER ABOUT KYLIE FRAME */
 
-.about-image{
-  min-height:0 !important;
-  height:auto !important;
-  padding:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* ==========================================================
+   GALLERY BUTTONS REMOVED
+   Static responsive venue gallery
+   ========================================================== */
+
+.gallery-header{
+  display:block!important;
 }
 
-.about-frame{
+.slider-controls{
+  display:none!important;
+}
+
+.gallery-window{
+  overflow:visible!important;
+}
+
+.gallery-track{
+  transform:none!important;
+}
+
+
+/* ==========================================================
+   GENERIC B&W SERVICES + GALLERY KYLIE + IMAGE PROTECTION
+   ========================================================== */
+
+/* Generic monochrome service images */
+.service-image img{
   width:100%;
-  height:auto !important;
-  min-height:0 !important;
-  padding:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:grayscale(1) contrast(1.05) brightness(.92)!important;
 }
 
-.about-frame-content{
-  width:auto;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:20px;
+.service-card:hover .service-image img{
+  transform:scale(1.03);
+  filter:grayscale(1) contrast(1.08) brightness(.96)!important;
 }
 
-.about-frame-content > span{
+/* Static Gallery Kylie — no slider */
+.kylie-gallery-block{
+  margin-top:72px;
+  padding-top:58px;
+  border-top:1px solid rgba(220,220,220,.13);
+}
+
+.kylie-gallery-heading{
+  max-width:720px;
+  margin-bottom:30px;
+}
+
+.kylie-gallery-heading h2{
+  color:#ffffff;
+  font-size:clamp(2.8rem,5vw,4.6rem);
+  font-weight:500;
+  letter-spacing:-.025em;
+}
+
+.kylie-gallery-heading h2 span{
+  color:var(--red);
+  font-style:italic;
+}
+
+.kylie-gallery-heading > p:not(.eyebrow){
+  margin-top:14px;
+  color:#a7a7a7;
+}
+
+.kylie-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+.kylie-gallery-item{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+  min-height:360px;
+  border:1px solid rgba(220,220,220,.22);
+  border-radius:18px;
+  background:#090909;
+  box-shadow:0 16px 36px rgba(0,0,0,.24);
+}
+
+.kylie-gallery-item img{
+  width:100%;
+  height:100%;
+  min-height:360px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  transition:transform .35s ease,filter .35s ease;
+}
+
+.kylie-gallery-item:hover img{
+  transform:scale(1.025);
+}
+
+/* Image download deterrents.
+   NOTE: Public web images can still be retrieved through browser/dev tools. */
+.protected-image{
+  -webkit-user-drag:none;
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -webkit-touch-callout:none;
+  pointer-events:none;
+}
+
+.protected-image-zone{
+  position:relative;
+  -webkit-touch-callout:none;
+}
+
+.protected-image-zone::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  background:transparent;
+  pointer-events:auto;
+}
+
+.image-protection-note{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid rgba(220,220,220,.08);
+  color:#666;
+  font-size:.66rem;
   text-align:center;
 }
 
-.about-kylie-logo{
-  width:260px;
-  max-width:100%;
-  height:auto;
-  max-height:none;
-  object-fit:contain;
-  object-position:center;
-  padding:8px;
+/* Do not let protection overlay block controls inside these zones */
+.age-card .btn,
+.brand,
+.hero .btn,
+.site-footer a{
+  position:relative;
+  z-index:5;
 }
-@media (max-width:760px){
 
-  .about-image{
-    padding:14px;
+/* Responsive Kylie gallery */
+@media (max-width:1000px){
+  .kylie-gallery-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
-  .about-frame{
-    padding:20px;
+  .kylie-gallery-item,
+  .kylie-gallery-item img{
+    min-height:330px;
+  }
+}
+
+@media (max-width:640px){
+  .kylie-gallery-block{
+    margin-top:54px;
+    padding-top:46px;
   }
 
-  .about-kylie-logo{
-    width:220px;
+  .kylie-gallery-grid{
+    grid-template-columns:1fr;
+    gap:14px;
   }
 
+  .kylie-gallery-item,
+  .kylie-gallery-item img{
+    min-height:420px;
+  }
 }

@@ -183,3 +183,30 @@ Services image mapping:
 5. Couples Massage -> kylie4
 6. Yoni Massage -> kylie5
 7. Male Grooming -> kylie6
+
+GALLERY CONTROLS REMOVED
+------------------------
+- Removed the Previous and Next gallery buttons.
+- Removed the obsolete gallery slider JavaScript.
+- Venue gallery now displays as a clean responsive grid.
+
+GENERIC SERVICES / GALLERY KYLIE / IMAGE PROTECTION
+---------------------------------------------------
+- Replaced all seven Services images with generic black-and-white massage/treatment imagery.
+- Service images are stored as:
+  service-generic-bw-1.webp through service-generic-bw-7.webp
+- Added a static "Gallery Kylie" section directly under the Venue Gallery.
+- Gallery Kylie uses:
+  kylie.webp, kylie2.webp, kylie3.webp, kylie4.webp, kylie5.webp, kylie6.webp
+- Gallery Kylie is a responsive grid with no slider and no Previous/Next controls.
+- Added image-saving deterrents:
+  * Right-click is blocked on image areas.
+  * Image dragging is disabled.
+  * Long-press image callout is disabled where browsers support it.
+  * Transparent interaction layers are placed over displayed image areas.
+
+IMPORTANT:
+No public website can make an image truly impossible to download.
+A determined visitor can still retrieve public image files through browser developer tools,
+page source, network requests, screenshots, or cached content. These protections are intended
+to discourage casual saving rather than provide absolute copy protection.

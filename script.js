@@ -87,46 +87,6 @@ function setActiveLink() {
 window.addEventListener("scroll", setActiveLink, { passive: true });
 setActiveLink();
 
-// Gallery slider
-const galleryTrack = document.getElementById("galleryTrack");
-const galleryItems = [...document.querySelectorAll(".gallery-item")];
-const galleryPrev = document.getElementById("galleryPrev");
-const galleryNext = document.getElementById("galleryNext");
-
-let galleryIndex = 0;
-
-function visibleGalleryItems() {
-  if (window.innerWidth <= 760) return 1;
-  return 3;
-}
-
-function updateGallery() {
-  const visible = visibleGalleryItems();
-  const maxIndex = Math.max(0, galleryItems.length - visible);
-  galleryIndex = Math.min(galleryIndex, maxIndex);
-
-  const item = galleryItems[0];
-  if (!item) return;
-
-  const gap = 18;
-  const itemWidth = item.getBoundingClientRect().width;
-  galleryTrack.style.transform = `translateX(-${galleryIndex * (itemWidth + gap)}px)`;
-}
-
-galleryNext.addEventListener("click", () => {
-  const maxIndex = Math.max(0, galleryItems.length - visibleGalleryItems());
-  galleryIndex = galleryIndex >= maxIndex ? 0 : galleryIndex + 1;
-  updateGallery();
-});
-
-galleryPrev.addEventListener("click", () => {
-  const maxIndex = Math.max(0, galleryItems.length - visibleGalleryItems());
-  galleryIndex = galleryIndex <= 0 ? maxIndex : galleryIndex - 1;
-  updateGallery();
-});
-
-window.addEventListener("resize", updateGallery);
-
 // Reveal on scroll
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -271,3 +231,31 @@ function updateLiveBusinessHours() {
 
 updateLiveBusinessHours();
 setInterval(updateLiveBusinessHours, 30000);
+
+
+// ==========================================================
+// IMAGE SAVING DETERRENTS
+// These discourage casual saving but cannot make public web
+// images technically impossible to retrieve.
+// ==========================================================
+
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
+});
+
+document.addEventListener("dragstart", event => {
+  if (event.target instanceof HTMLImageElement) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("contextmenu", event => {
+  const target = event.target;
+  if (
+    target instanceof HTMLImageElement ||
+    target.closest?.(".protected-image-zone") ||
+    target.closest?.(".hero")
+  ) {
+    event.preventDefault();
+  }
+});
