@@ -164,3 +164,110 @@ if (scrollTopButton) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
+
+// ==========================================================
+// LIVE BUSINESS HOURS — JOHANNESBURG
+// Mon-Sat 10:00–20:00
+// Sun     10:00–18:00
+// ==========================================================
+
+const BUSINESS_TIME_ZONE = "Africa/Johannesburg";
+
+const BUSINESS_HOURS = {
+  0: { open: "10:00", close: "18:00" }, // Sunday
+  1: { open: "10:00", close: "20:00" }, // Monday
+  2: { open: "10:00", close: "20:00" }, // Tuesday
+  3: { open: "10:00", close: "20:00" }, // Wednesday
+  4: { open: "10:00", close: "20:00" }, // Thursday
+  5: { open: "10:00", close: "20:00" }, // Friday
+  6: { open: "10:00", close: "20:00" }  // Saturday
+};
+
+function businessTimeToMinutes(value) {
+  const [hour, minute] = value.split(":").map(Number);
+  return hour * 60 + minute;
+}
+
+function getJohannesburgBusinessTime() {
+  const parts = new Intl.DateTimeFormat("en-ZA", {
+    timeZone: BUSINESS_TIME_ZONE,
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23"
+  }).formatToParts(new Date());
+
+  const values = {};
+  parts.forEach(part => {
+    if (part.type !== "literal") values[part.type] = part.value;
+  });
+
+  const dayMap = {
+    Sun: 0, Mon: 1, Tue: 2, Wed: 3,
+    Thu: 4, Fri: 5, Sat: 6
+  };
+
+  return {
+    day: dayMap[values.weekday],
+    hour: Number(values.hour),
+    minute: Number(values.minute),
+    displayTime: `${values.hour}:${values.minute}`
+  };
+}
+
+function updateLiveBusinessHours() {
+  const statusEl = document.getElementById("liveBusinessStatus");
+  const timeEl = document.getElementById("businessLocalTime");
+  const noteEl = document.getElementById("businessStatusNote");
+  const todayHoursEl = document.getElementById("todayBusinessHours");
+
+  if (!statusEl || !timeEl || !noteEl) return;
+
+  const card = statusEl.closest(".live-hours-card");
+  const current = getJohannesburgBusinessTime();
+  const hours = BUSINESS_HOURS[current.day];
+
+  timeEl.textContent = current.displayTime;
+
+  if (!hours) {
+    statusEl.textContent = "Closed now";
+    if (todayHoursEl) todayHoursEl.textContent = "Closed";
+    noteEl.textContent = "There are no published opening hours for today.";
+    card?.classList.remove("is-open");
+    card?.classList.add("is-closed");
+    return;
+  }
+
+  if (todayHoursEl) {
+    todayHoursEl.textContent = `${hours.open} – ${hours.close}`;
+  }
+
+  const now = current.hour * 60 + current.minute;
+  const open = businessTimeToMinutes(hours.open);
+  const close = businessTimeToMinutes(hours.close);
+  const isOpen = now >= open && now < close;
+
+  card?.classList.toggle("is-open", isOpen);
+  card?.classList.toggle("is-closed", !isOpen);
+
+  if (isOpen) {
+    statusEl.textContent = "Open now — by appointment";
+    noteEl.textContent =
+      `Open until ${hours.close}. Please WhatsApp Kylie first to confirm your appointment.`;
+  } else {
+    statusEl.textContent = "Closed now";
+
+    if (now < open) {
+      noteEl.textContent =
+        `Today's appointment window opens at ${hours.open}. You can still WhatsApp now to arrange a booking.`;
+    } else {
+      noteEl.textContent =
+        `Today's appointment window closed at ${hours.close}. You can WhatsApp Kylie to arrange the next appointment.`;
+    }
+  }
+}
+
+updateLiveBusinessHours();
+setInterval(updateLiveBusinessHours, 30000);

@@ -1005,6 +1005,7 @@ h1 span{
 
   .about-image{
     min-height:430px;
+   
   }
 
   .about-frame{
@@ -2741,4 +2742,348 @@ body{
   .trust-grid article{
     box-shadow:0 12px 28px rgba(0,0,0,.15)!important;
   }
+}
+
+
+/* ==========================================================
+   RATES CTA + ABOUT KYLIE LOGO UPDATE
+   ========================================================== */
+
+/* Services are information-only: no booking buttons */
+.service-body{
+  display:block!important;
+  height:auto!important;
+}
+
+.service-card{
+  height:100%;
+}
+
+/* Every Rates & Treatments card has its own booking/enquiry CTA */
+.rate-card{
+  display:flex!important;
+  flex-direction:column;
+  height:100%;
+}
+
+.rate-book-btn{
+  width:100%;
+  min-height:46px;
+  margin-top:auto!important;
+  padding:0 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:999px;
+  border:1px solid var(--red);
+  background:linear-gradient(135deg,#b90720,var(--red));
+  color:#ffffff!important;
+  font-size:.70rem;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.06em;
+  text-align:center;
+  text-transform:uppercase;
+  box-shadow:0 10px 24px rgba(217,8,36,.14);
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.rate-book-btn:hover{
+  color:#ffffff!important;
+  background:linear-gradient(135deg,var(--red),#ef1733);
+  border-color:#ef1733;
+  transform:translateY(-2px);
+  box-shadow:0 13px 28px rgba(217,8,36,.22);
+}
+
+/* Keep spacing between rates and the CTA consistent */
+.rate-card ul,
+.rate-card .single-price,
+.rate-card > p{
+  margin-bottom:20px;
+}
+
+/* About Kylie: text with logo directly underneath */
+.about-frame{
+  align-items:flex-end;
+}
+
+.about-frame-content{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:24px;
+}
+
+.about-frame-content > span{
+  display:block;
+}
+
+.about-kylie-logo{
+  width:min(100%,430px);
+  height:auto;
+  max-height:245px;
+  object-fit:contain;
+  object-position:left center;
+  padding:14px;
+  border:1px solid rgba(220,220,220,.22);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.28),
+    0 0 14px rgba(217,8,36,.05);
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.about-kylie-logo:hover{
+  transform:scale(1.02);
+  border-color:rgba(220,220,220,.45);
+  box-shadow:
+    0 20px 42px rgba(0,0,0,.34),
+    0 0 18px rgba(217,8,36,.08);
+}
+
+@media (max-width:760px){
+  .rate-book-btn{
+    min-height:48px;
+    font-size:.68rem;
+  }
+
+  .about-frame-content{
+    gap:20px;
+  }
+
+  .about-kylie-logo{
+    width:100%;
+    max-height:220px;
+    padding:10px;
+  }
+}
+
+
+/* ==========================================================
+   VENUE GALLERY + YONI UPDATE
+   ========================================================== */
+
+.gallery-track{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+}
+
+.gallery-item{
+  overflow:hidden;
+}
+
+.gallery-item img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+}
+
+.gallery-item figcaption{
+  text-align:center;
+}
+
+@media (max-width:1000px){
+  .gallery-track{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:640px){
+  .gallery-track{
+    grid-template-columns:1fr;
+  }
+}
+
+.rate-card.featured{
+  background:linear-gradient(160deg,#171717,#050505)!important;
+  color:#ffffff!important;
+  border:1px solid var(--red)!important;
+  box-shadow:
+    0 20px 48px rgba(0,0,0,.38),
+    0 0 18px rgba(217,8,36,.08)!important;
+}
+
+.rate-card.featured h3,
+.rate-card.featured li span,
+.rate-card.featured p{
+  color:#f4f4f4!important;
+}
+
+.rate-card.featured li{
+  border-color:rgba(255,255,255,.16)!important;
+}
+
+.rate-card.featured strong,
+.rate-card.featured .single-price{
+  color:#ff2744!important;
+}
+
+.rate-card.featured .rate-book-btn,
+.rate-card.featured .popular{
+  color:#ffffff!important;
+  background:var(--red)!important;
+  border-color:var(--red)!important;
+}
+
+.contact-btn.whatsapp-card,
+.contact-btn.primary.whatsapp-card{
+  background:linear-gradient(135deg,#b90720,var(--red))!important;
+  color:#ffffff!important;
+  border:1px solid var(--red)!important;
+  box-shadow:0 16px 34px rgba(217,8,36,.20)!important;
+}
+
+.contact-btn.whatsapp-card strong,
+.contact-btn.whatsapp-card span{
+  color:#ffffff!important;
+}
+
+.contact-btn.whatsapp-card:hover{
+  background:linear-gradient(135deg,var(--red),#ef1733)!important;
+  border-color:#ef1733!important;
+  box-shadow:
+    0 20px 42px rgba(217,8,36,.28),
+    0 0 16px rgba(217,8,36,.08)!important;
+}
+
+
+/* ==========================================================
+   LIVE HOURS EXACT SCHEDULE + SERVICE IMAGE MAPPING
+   ========================================================== */
+
+.business-hours-layout{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);
+  gap:56px;
+  align-items:start;
+}
+
+.weekly-hours{
+  margin-top:28px;
+  overflow:hidden;
+  border:1px solid rgba(220,220,220,.18);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+}
+
+.weekly-hours-row{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:20px;
+  align-items:center;
+  padding:12px 16px;
+  border-bottom:1px solid rgba(220,220,220,.10);
+}
+
+.weekly-hours-row:last-child{
+  border-bottom:0;
+}
+
+.weekly-hours-row span{
+  color:#d0d0d0;
+  font-weight:600;
+}
+
+.weekly-hours-row strong{
+  color:#ffffff;
+  font-size:.84rem;
+  text-align:right;
+}
+
+.weekly-hours-row.sunday{
+  background:rgba(217,8,36,.055);
+}
+
+.live-hours-card{
+  position:sticky;
+  top:110px;
+}
+
+@media (max-width:1000px){
+  .business-hours-layout{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+
+  .live-hours-card{
+    position:relative;
+    top:auto;
+    max-width:720px;
+  }
+}
+
+@media (max-width:760px){
+  .weekly-hours-row{
+    grid-template-columns:70px 1fr;
+    padding:11px 14px;
+  }
+}
+
+/* SMALLER ABOUT KYLIE FRAME */
+
+.about-image{
+  min-height:0 !important;
+  height:auto !important;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.about-frame{
+  width:100%;
+  height:auto !important;
+  min-height:0 !important;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.about-frame-content{
+  width:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+
+.about-frame-content > span{
+  text-align:center;
+}
+
+.about-kylie-logo{
+  width:260px;
+  max-width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  object-position:center;
+  padding:8px;
+}
+@media (max-width:760px){
+
+  .about-image{
+    padding:14px;
+  }
+
+  .about-frame{
+    padding:20px;
+  }
+
+  .about-kylie-logo{
+    width:220px;
+  }
+
 }

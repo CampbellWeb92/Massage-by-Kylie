@@ -132,3 +132,54 @@ All main content cards now use:
 
 The main page sections remain black/charcoal so the white cards stand out clearly.
 The 18+ age-verification popup remains dark for readability and visual focus.
+
+RATES BUTTONS + ABOUT KYLIE LOGO
+--------------------------------
+- Removed booking/enquiry buttons from all 6 Services cards.
+- Added "Book Now / Enquire Now" buttons to all 6 Rates & Treatments cards.
+- Each Rates & Treatments button opens WhatsApp with the treatment name pre-filled.
+- Added images/kylielogo.webp underneath:
+  Relaxation
+  meets
+  elegance
+  in the About Kylie section.
+
+VENUE GALLERY + YONI MASSAGE UPDATE
+-----------------------------------
+- Replaced the venue gallery with venue1–venue4 images in this order:
+  1. Tub Treatment Room
+  2. The Gravity Table Treatment Room
+  3. Sensual Massage Treatment Rooms
+  4. Couples Massage Treatment Room
+- Added a Yoni Massage Services card before Male Grooming
+- Added a Yoni Massage Rates & Treatments card before Male Grooming
+- Yoni Massage rates:
+  60min — R1 000
+  90min — R1 300
+- Confirmed featured rate card styling is black
+- Confirmed WhatsApp contact card styling is red with white text
+
+LIVE HOURS + SERVICE IMAGES UPDATE
+----------------------------------
+Live Johannesburg business hours:
+- Mon: 10:00–20:00
+- Tue: 10:00–20:00
+- Wed: 10:00–20:00
+- Thu: 10:00–20:00
+- Fri: 10:00–20:00
+- Sat: 10:00–20:00
+- Sun: 10:00–18:00
+
+Live status:
+- During open hours: "Open now — by appointment"
+- Outside open hours: "Closed now"
+- Refreshes every 30 seconds
+
+Services image mapping:
+1. Signature Sensual Massage -> signature
+2. 4 Hands Massage -> kylie
+3. Tub Treatment -> kylie2
+4. The Gravity Table -> kylie3
+5. Couples Massage -> kylie4
+6. Yoni Massage -> kylie5
+7. Male Grooming -> kylie6
