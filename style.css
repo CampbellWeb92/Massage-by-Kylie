@@ -1922,3 +1922,823 @@ body::before{
     transition:none!important;
   }
 }
+
+
+/* ==========================================================
+   CONSISTENT LUXURY DESIGN SYSTEM
+   Black / charcoal / white / silver / red
+   ========================================================== */
+
+:root{
+  --black:#070707;
+  --charcoal:#101010;
+  --charcoal-2:#161616;
+  --charcoal-3:#1d1d1d;
+  --white:#ffffff;
+  --silver:#cfcfcf;
+  --silver-muted:#979797;
+  --silver-line:rgba(220,220,220,.20);
+  --red:#d90824;
+  --red-bright:#ef1733;
+
+  --section-space:96px;
+  --section-space-mobile:72px;
+  --card-radius:18px;
+  --card-border:1px solid rgba(220,220,220,.20);
+  --card-bg:rgba(18,18,18,.94);
+  --card-shadow:0 18px 44px rgba(0,0,0,.26);
+  --content-gap:24px;
+}
+
+/* ----------------------------------------------------------
+   GLOBAL PAGE RHYTHM
+   ---------------------------------------------------------- */
+
+body{
+  background:var(--black);
+  color:var(--white);
+}
+
+.site-section,
+.section,
+.contact-section,
+.business-hours-section,
+.rates-cta,
+.trust-strip{
+  padding-top:var(--section-space);
+  padding-bottom:var(--section-space);
+}
+
+.site-section{
+  position:relative;
+}
+
+/* All primary sections use the same dark luxury family */
+.light-section,
+.dark-section,
+.rates-section,
+.gallery-section,
+.faq-section,
+.info-section,
+.business-hours-section,
+.contact-section,
+.rates-cta,
+.trust-strip{
+  color:var(--white);
+  background:
+    radial-gradient(circle at 90% 10%,rgba(217,8,36,.045),transparent 25%),
+    linear-gradient(180deg,rgba(14,14,14,.92),rgba(7,7,7,.94))!important;
+  border-top:1px solid rgba(220,220,220,.06);
+}
+
+/* Alternate every other major block very slightly, not dramatically */
+#services,
+#information,
+#business-hours{
+  background:
+    radial-gradient(circle at 8% 20%,rgba(255,255,255,.025),transparent 22%),
+    linear-gradient(180deg,rgba(20,20,20,.92),rgba(11,11,11,.94))!important;
+}
+
+/* ----------------------------------------------------------
+   HEADINGS
+   ---------------------------------------------------------- */
+
+.section-heading,
+.why-heading,
+.consistent-heading,
+.gallery-header{
+  margin-bottom:46px;
+}
+
+.section-heading h2,
+.why-heading h2,
+.consistent-heading h2,
+.gallery-header h2,
+.contact-copy h2,
+.business-hours-copy h2,
+.about-copy h2{
+  color:var(--white)!important;
+  font-weight:500;
+  letter-spacing:-.025em;
+}
+
+.section-heading p:not(.eyebrow),
+.why-heading p:not(.eyebrow),
+.consistent-heading p:not(.eyebrow),
+.gallery-header p:not(.eyebrow),
+.contact-copy p:not(.eyebrow),
+.business-hours-copy p:not(.eyebrow),
+.about-copy p:not(.eyebrow){
+  color:var(--silver-muted)!important;
+  line-height:1.8;
+}
+
+.eyebrow,
+.eyebrow.dark{
+  color:var(--silver)!important;
+  letter-spacing:.30em;
+  font-weight:500;
+}
+
+/* One consistent red-to-silver divider */
+.section-heading::after,
+.why-heading::after,
+.consistent-heading::after,
+.gallery-header > div:first-child::after,
+.contact-copy::after,
+.business-hours-copy::after,
+.about-copy::after{
+  content:"";
+  display:block;
+  width:88px;
+  height:1px;
+  margin-top:20px;
+  border:0;
+  background:linear-gradient(90deg,var(--red),rgba(220,220,220,.60),transparent);
+}
+
+/* ----------------------------------------------------------
+   CARDS
+   ---------------------------------------------------------- */
+
+.service-card,
+.rate-card,
+.info-card,
+.faq-item,
+.hours-card,
+.contact-btn,
+.about-points > div,
+.testimonial-card{
+  border:var(--card-border)!important;
+  border-radius:var(--card-radius)!important;
+  background:var(--card-bg)!important;
+  box-shadow:var(--card-shadow)!important;
+}
+
+.service-card,
+.rate-card,
+.info-card,
+.faq-item,
+.hours-card,
+.contact-btn{
+  transition:
+    transform .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+}
+
+.service-card:hover,
+.rate-card:hover,
+.info-card:hover,
+.faq-item:hover,
+.hours-card:hover,
+.contact-btn:hover{
+  transform:translateY(-3px);
+  border-color:rgba(220,220,220,.42)!important;
+  box-shadow:
+    0 22px 54px rgba(0,0,0,.34),
+    0 0 16px rgba(217,8,36,.055)!important;
+}
+
+/* Card text */
+.service-body h3,
+.rate-card h3,
+.info-card h3,
+.faq-item summary,
+.hours-card strong{
+  color:var(--white)!important;
+}
+
+.service-body p,
+.rate-card p,
+.info-card p,
+.info-card li,
+.faq-item p,
+.hours-card span{
+  color:var(--silver-muted)!important;
+}
+
+/* Consistent inner padding */
+.service-body,
+.rate-card,
+.info-card,
+.hours-card{
+  padding:28px!important;
+}
+
+/* ----------------------------------------------------------
+   SERVICES
+   ---------------------------------------------------------- */
+
+.service-grid,
+.rate-grid,
+.info-grid{
+  gap:var(--content-gap);
+}
+
+.service-image{
+  height:220px;
+  background:#0a0a0a;
+}
+
+.service-image img{
+  filter:saturate(.86) contrast(1.03) brightness(.93);
+}
+
+.service-card:hover .service-image img{
+  transform:scale(1.03);
+  filter:saturate(.94) contrast(1.04) brightness(.96);
+}
+
+.service-book-btn{
+  margin-top:20px;
+}
+
+/* ----------------------------------------------------------
+   WHY CHOOSE
+   ---------------------------------------------------------- */
+
+.trust-grid{
+  gap:16px;
+}
+
+.trust-grid article{
+  min-height:132px;
+  padding:24px 18px;
+  border:var(--card-border)!important;
+  border-radius:var(--card-radius);
+  background:rgba(18,18,18,.78)!important;
+}
+
+.trust-grid article:not(:last-child){
+  border-right:var(--card-border)!important;
+}
+
+.trust-grid strong{
+  color:var(--white);
+}
+
+.trust-grid span{
+  color:var(--silver-muted);
+}
+
+/* ----------------------------------------------------------
+   ABOUT
+   ---------------------------------------------------------- */
+
+.about-image{
+  border:var(--card-border);
+  border-radius:var(--card-radius);
+  background:
+    radial-gradient(circle at 45% 38%,rgba(217,8,36,.10),transparent 24%),
+    linear-gradient(145deg,#161616,#080808)!important;
+  box-shadow:var(--card-shadow);
+}
+
+.about-frame{
+  border-color:rgba(220,220,220,.18);
+  border-radius:14px;
+}
+
+.about-points{
+  gap:14px;
+}
+
+.about-points > div{
+  padding:20px!important;
+}
+
+.about-points strong{
+  color:#fff;
+}
+
+.about-points span{
+  color:var(--silver-muted);
+}
+
+/* ----------------------------------------------------------
+   RATES
+   ---------------------------------------------------------- */
+
+.rate-card,
+.rate-card.featured{
+  color:var(--white);
+}
+
+.rate-card.featured{
+  border-color:rgba(217,8,36,.68)!important;
+  box-shadow:
+    0 22px 54px rgba(0,0,0,.35),
+    0 0 20px rgba(217,8,36,.08)!important;
+}
+
+.rate-card li{
+  border-color:rgba(220,220,220,.15)!important;
+}
+
+.rate-card li span{
+  color:var(--silver)!important;
+}
+
+.rate-card strong,
+.single-price{
+  color:var(--red-bright)!important;
+}
+
+/* ----------------------------------------------------------
+   GALLERY
+   ---------------------------------------------------------- */
+
+.gallery-item{
+  border-radius:var(--card-radius)!important;
+  border:var(--card-border)!important;
+  background:#0b0b0b!important;
+  box-shadow:var(--card-shadow);
+}
+
+.gallery-item figcaption{
+  color:#fff;
+  background:rgba(8,8,8,.78);
+  border:1px solid rgba(220,220,220,.14);
+}
+
+.slider-controls button{
+  border-color:rgba(220,220,220,.26);
+  background:rgba(15,15,15,.92);
+}
+
+.slider-controls button:hover{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+/* ----------------------------------------------------------
+   INFORMATION + HOURS
+   ---------------------------------------------------------- */
+
+.info-card{
+  border-left:1px solid rgba(220,220,220,.20)!important;
+}
+
+.info-card a{
+  color:var(--red-bright);
+}
+
+.hours-row{
+  border-color:rgba(220,220,220,.13);
+}
+
+/* ----------------------------------------------------------
+   FAQ
+   ---------------------------------------------------------- */
+
+.faq-item summary{
+  font-weight:500;
+}
+
+.faq-item summary::after{
+  color:var(--red-bright);
+}
+
+/* ----------------------------------------------------------
+   CONTACT
+   ---------------------------------------------------------- */
+
+.contact-grid{
+  gap:54px;
+}
+
+.contact-actions{
+  gap:14px;
+}
+
+.contact-btn.primary{
+  border-color:var(--red)!important;
+  background:linear-gradient(135deg,#b90720,var(--red))!important;
+}
+
+.contact-btn strong{
+  color:#fff;
+}
+
+.contact-btn span{
+  color:var(--silver)!important;
+}
+
+/* ----------------------------------------------------------
+   BUTTONS
+   ---------------------------------------------------------- */
+
+.btn,
+.service-book-btn,
+.rate-book{
+  min-height:48px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.075em;
+  text-transform:uppercase;
+}
+
+.btn-primary,
+.service-book-btn{
+  color:#fff!important;
+  background:linear-gradient(135deg,#b90720,var(--red))!important;
+  border:1px solid var(--red)!important;
+  box-shadow:0 10px 26px rgba(217,8,36,.16);
+}
+
+.btn-primary:hover,
+.service-book-btn:hover{
+  background:linear-gradient(135deg,var(--red),var(--red-bright))!important;
+  box-shadow:0 14px 32px rgba(217,8,36,.24);
+}
+
+/* ----------------------------------------------------------
+   HEADER + FOOTER
+   ---------------------------------------------------------- */
+
+.site-header{
+  background:rgba(5,5,5,.94)!important;
+  border-bottom:1px solid rgba(220,220,220,.10);
+}
+
+.main-nav a{
+  color:var(--silver);
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+  color:#fff;
+}
+
+.site-footer{
+  padding:36px 0!important;
+  background:#030303!important;
+  border-top:1px solid rgba(220,220,220,.10);
+}
+
+.footer-contact-icons a{
+  color:var(--silver);
+  border-color:rgba(220,220,220,.24);
+}
+
+.footer-contact-icons a:hover{
+  color:#fff;
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.footer-links{
+  color:var(--silver-muted);
+}
+
+/* ----------------------------------------------------------
+   AGE GATE
+   ---------------------------------------------------------- */
+
+.age-gate{
+  background:rgba(0,0,0,.96)!important;
+}
+
+.age-card{
+  border:1px solid rgba(220,220,220,.24)!important;
+  border-radius:var(--card-radius)!important;
+  background:
+    radial-gradient(circle at top right,rgba(217,8,36,.08),transparent 34%),
+    linear-gradient(145deg,#151515,#070707)!important;
+}
+
+.age-card h2{
+  color:#fff;
+}
+
+.age-card p{
+  color:var(--silver-muted);
+}
+
+/* ----------------------------------------------------------
+   LEGAL PAGES
+   ---------------------------------------------------------- */
+
+.legal-card{
+  border:var(--card-border)!important;
+  border-radius:var(--card-radius)!important;
+  background:var(--card-bg)!important;
+}
+
+.legal-card h1,
+.legal-card h2{
+  color:#fff;
+}
+
+.legal-card p,
+.legal-card li{
+  color:var(--silver-muted);
+}
+
+/* ----------------------------------------------------------
+   MOBILE CONSISTENCY
+   ---------------------------------------------------------- */
+
+@media (max-width:1000px){
+  :root{
+    --section-space:82px;
+    --content-gap:20px;
+  }
+
+  .contact-grid{
+    gap:34px;
+  }
+}
+
+@media (max-width:760px){
+  :root{
+    --section-space:var(--section-space-mobile);
+    --content-gap:16px;
+  }
+
+  .site-section,
+  .section,
+  .contact-section,
+  .business-hours-section,
+  .rates-cta,
+  .trust-strip{
+    padding-top:var(--section-space-mobile);
+    padding-bottom:var(--section-space-mobile);
+  }
+
+  .section-heading,
+  .why-heading,
+  .consistent-heading,
+  .gallery-header{
+    margin-bottom:34px;
+  }
+
+  .service-body,
+  .rate-card,
+  .info-card,
+  .hours-card{
+    padding:22px!important;
+  }
+
+  .service-image{
+    height:205px;
+  }
+
+  .trust-grid article{
+    min-height:110px;
+    padding:20px;
+  }
+
+  .site-footer{
+    padding-bottom:92px!important;
+  }
+}
+
+@media (max-width:480px){
+  .service-body,
+  .rate-card,
+  .info-card,
+  .hours-card{
+    padding:20px!important;
+  }
+
+  .section-heading h2,
+  .why-heading h2,
+  .consistent-heading h2,
+  .gallery-header h2,
+  .contact-copy h2,
+  .business-hours-copy h2{
+    font-size:clamp(2.7rem,12vw,3.5rem)!important;
+  }
+}
+
+
+/* ==========================================================
+   WHITE CARD SYSTEM
+   White cards / dark text / silver borders / red accents
+   ========================================================== */
+
+/* Core content cards */
+.service-card,
+.rate-card,
+.rate-card.featured,
+.info-card,
+.faq-item,
+.hours-card,
+.contact-btn,
+.about-points > div,
+.trust-grid article,
+.testimonial-card{
+  background:#ffffff!important;
+  color:#111111!important;
+  border:1px solid #d8d8d8!important;
+  box-shadow:0 16px 38px rgba(0,0,0,.16)!important;
+}
+
+/* Card hover */
+.service-card:hover,
+.rate-card:hover,
+.info-card:hover,
+.faq-item:hover,
+.hours-card:hover,
+.contact-btn:hover,
+.trust-grid article:hover{
+  transform:translateY(-3px);
+  border-color:#bfbfbf!important;
+  box-shadow:
+    0 22px 46px rgba(0,0,0,.20),
+    0 0 14px rgba(217,8,36,.06)!important;
+}
+
+/* Card headings */
+.service-body h3,
+.rate-card h3,
+.info-card h3,
+.faq-item summary,
+.hours-card strong,
+.contact-btn strong,
+.about-points strong,
+.trust-grid strong,
+.testimonial-card p{
+  color:#111111!important;
+}
+
+/* Card paragraph / secondary text */
+.service-body p,
+.rate-card p,
+.info-card p,
+.info-card li,
+.faq-item p,
+.hours-card span,
+.contact-btn span,
+.about-points span,
+.trust-grid span,
+.testimonial-card span{
+  color:#5f5f5f!important;
+}
+
+/* Rate cards */
+.rate-card li{
+  border-color:#dddddd!important;
+}
+
+.rate-card li span{
+  color:#555555!important;
+}
+
+.rate-card strong,
+.single-price{
+  color:var(--red)!important;
+}
+
+.rate-card.featured{
+  border:1px solid var(--red)!important;
+  box-shadow:
+    0 18px 42px rgba(0,0,0,.16),
+    0 0 16px rgba(217,8,36,.06)!important;
+}
+
+.popular{
+  background:var(--red)!important;
+  color:#ffffff!important;
+}
+
+/* Why Choose cards */
+.trust-grid article{
+  border-radius:var(--card-radius)!important;
+}
+
+.trust-grid .icon{
+  background:#ffffff;
+  color:var(--red);
+  border-color:var(--red);
+}
+
+/* Contact cards: all white, red hover accent */
+.contact-btn,
+.contact-btn.primary{
+  background:#ffffff!important;
+  border:1px solid #d8d8d8!important;
+  color:#111111!important;
+}
+
+.contact-btn.primary{
+  border-color:var(--red)!important;
+}
+
+.contact-btn:hover{
+  border-color:var(--red)!important;
+}
+
+.contact-btn strong{
+  color:#111111!important;
+}
+
+.contact-btn span{
+  color:#666666!important;
+}
+
+/* About info cards */
+.about-points > div{
+  border-top:2px solid var(--red)!important;
+}
+
+/* FAQ */
+.faq-item summary{
+  color:#111111!important;
+}
+
+.faq-item summary::after{
+  color:var(--red)!important;
+}
+
+/* Hours */
+.hours-card{
+  background:#ffffff!important;
+}
+
+.hours-row{
+  border-color:#dddddd!important;
+}
+
+.hours-row span{
+  color:#666666!important;
+}
+
+.hours-row strong{
+  color:#111111!important;
+}
+
+/* Information cards */
+.info-card{
+  border-left:3px solid var(--red)!important;
+}
+
+.info-card a{
+  color:var(--red)!important;
+}
+
+/* White cards need slightly stronger image separation */
+.service-image{
+  border-bottom:1px solid #e2e2e2;
+}
+
+/* Button inside white cards */
+.service-book-btn,
+.rate-book{
+  color:#ffffff!important;
+  background:var(--red)!important;
+  border:1px solid var(--red)!important;
+}
+
+.service-book-btn:hover,
+.rate-book:hover{
+  color:#ffffff!important;
+  background:var(--red-bright)!important;
+  border-color:var(--red-bright)!important;
+}
+
+/* Rate Book button was previously transparent on dark cards */
+.rate-book{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Keep gallery image frames dark, but captions clean white */
+.gallery-item figcaption{
+  background:rgba(255,255,255,.94)!important;
+  color:#111111!important;
+  border:1px solid rgba(210,210,210,.8)!important;
+}
+
+/* Preserve dark page sections for contrast */
+.light-section,
+.dark-section,
+.rates-section,
+.gallery-section,
+.faq-section,
+.info-section,
+.business-hours-section,
+.contact-section,
+.rates-cta,
+.trust-strip{
+  color:#ffffff;
+}
+
+/* Mobile */
+@media (max-width:760px){
+  .service-card,
+  .rate-card,
+  .info-card,
+  .faq-item,
+  .hours-card,
+  .contact-btn,
+  .about-points > div,
+  .trust-grid article{
+    box-shadow:0 12px 28px rgba(0,0,0,.15)!important;
+  }
+}

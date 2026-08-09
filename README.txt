@@ -105,3 +105,30 @@ BUSINESS HOURS
 The uploaded site did not contain verified fixed weekly opening hours.
 The new section therefore uses the accurate wording:
 "Monday – Sunday: By appointment only" and asks visitors to WhatsApp to confirm availability.
+
+CONSISTENT LAYOUT & COLOUR SYSTEM
+---------------------------------
+The site has been standardized around one luxury visual system:
+- Black and charcoal section backgrounds throughout
+- White headings
+- Soft silver body text, borders and icons
+- Red accents and primary buttons
+- Consistent card radius, border, shadow and padding
+- Consistent section spacing and heading treatment
+- Matching service, rate, info, FAQ, business-hours and contact cards
+- Matching button heights and hover states
+- Consistent desktop/tablet/mobile spacing
+- Existing faint silver sparkle background retained behind all content
+
+WHITE CARD UPDATE
+-----------------
+All main content cards now use:
+- White backgrounds
+- Dark charcoal/black headings
+- Medium gray body text
+- Soft silver borders
+- Red accents and buttons
+- Subtle shadow / hover lift
+
+The main page sections remain black/charcoal so the white cards stand out clearly.
+The 18+ age-verification popup remains dark for readability and visual focus.
