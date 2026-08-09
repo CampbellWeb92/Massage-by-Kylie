@@ -210,3 +210,8 @@ No public website can make an image truly impossible to download.
 A determined visitor can still retrieve public image files through browser developer tools,
 page source, network requests, screenshots, or cached content. These protections are intended
 to discourage casual saving rather than provide absolute copy protection.
+
+
+ABOUT KYLIE LOGO FRAME UPDATE
+- Replaced the About Kylie logo with the newly uploaded logo.
+- Reduced the outer frame, inner frame, and logo size for a tighter fit.

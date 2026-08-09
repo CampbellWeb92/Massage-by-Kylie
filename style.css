@@ -3201,3 +3201,104 @@ body{
     min-height:420px;
   }
 }
+
+
+/* SMALLER ABOUT KYLIE LOGO CONTAINER */
+#about .about-grid{
+  grid-template-columns:minmax(280px,360px) minmax(0,1fr)!important;
+  gap:48px!important;
+  align-items:center!important;
+}
+
+#about .about-image{
+  width:100%!important;
+  max-width:360px!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:14px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:18px!important;
+}
+
+#about .about-frame{
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+  padding:18px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:14px!important;
+}
+
+#about .about-frame-content{
+  width:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:16px!important;
+}
+
+#about .about-frame-content > span{
+  width:100%!important;
+  text-align:center!important;
+  font-size:2.4rem!important;
+  line-height:.9!important;
+}
+
+#about .about-kylie-logo{
+  width:220px!important;
+  max-width:88%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:0!important;
+  margin:0 auto!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+#about .about-kylie-logo:hover{
+  transform:none!important;
+  box-shadow:none!important;
+}
+
+@media (max-width:1000px){
+  #about .about-grid{
+    grid-template-columns:1fr!important;
+    gap:30px!important;
+  }
+  #about .about-image{
+    max-width:320px!important;
+  }
+}
+
+@media (max-width:760px){
+  #about .about-image{
+    max-width:290px!important;
+    padding:10px!important;
+  }
+  #about .about-frame{
+    padding:16px!important;
+  }
+  #about .about-frame-content > span{
+    font-size:2.1rem!important;
+  }
+  #about .about-kylie-logo{
+    width:195px!important;
+  }
+}
+
+@media (max-width:480px){
+  #about .about-image{
+    max-width:260px!important;
+  }
+  #about .about-kylie-logo{
+    width:175px!important;
+  }
+}
