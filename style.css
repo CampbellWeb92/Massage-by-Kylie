@@ -4027,3 +4027,35 @@ img.protected-image{
   }
 
 }
+
+/* ==========================================================
+   MASSAGE BY KYLIE
+   MOBILE NAVBAR WHATSAPP BUTTON FIX
+
+   Load this file AFTER style.css.
+   This hides ONLY the header/navbar WhatsApp button on
+   tablet/mobile screens. The sticky bottom contact bar remains.
+   ========================================================== */
+
+/* Desktop: keep the navbar WhatsApp button visible */
+.site-header .nav-cta{
+  display:inline-flex !important;
+}
+
+/* Tablet + mobile: remove navbar WhatsApp button */
+@media (max-width:1000px){
+  .site-header .nav-cta{
+    display:none !important;
+  }
+}
+
+/* Explicitly preserve the sticky bottom contact bar */
+@media (max-width:760px){
+  .mobile-booking-bar{
+    display:grid !important;
+  }
+
+  .mobile-booking-bar a{
+    display:grid !important;
+  }
+}
