@@ -3792,3 +3792,130 @@ img.protected-image{
     text-align:center !important;
   }
 }
+/* ==========================================================
+   VENUE GALLERY — VIEW ROOM BUTTON FIX
+   Add this file AFTER your main style.css
+   OR copy everything below to the very bottom of style.css
+   ========================================================== */
+
+/* Keep the venue card itself clickable */
+.gallery-item.venue-popup-trigger{
+  position:relative !important;
+  cursor:pointer !important;
+  overflow:hidden !important;
+}
+
+/* IMPORTANT:
+   This resets the old full-image ::after overlay created by
+   .protected-image-zone::after and converts it into a small
+   "View Room" button instead.
+*/
+.gallery-item.venue-popup-trigger::after,
+.gallery-item.venue-popup-trigger.protected-image-zone::after{
+  content:"View Room" !important;
+
+  position:absolute !important;
+  z-index:8 !important;
+
+  /* Reset the old inset:0 that stretched over the whole image */
+  inset:auto !important;
+  top:14px !important;
+  left:14px !important;
+  right:auto !important;
+  bottom:auto !important;
+
+  width:auto !important;
+  height:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  padding:8px 13px !important;
+
+  background:rgba(8,8,8,.82) !important;
+  color:#ffffff !important;
+
+  border:1px solid rgba(255,255,255,.32) !important;
+  border-radius:999px !important;
+
+  box-shadow:0 6px 18px rgba(0,0,0,.28) !important;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  font-family:"Montserrat",sans-serif !important;
+  font-size:.64rem !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+
+  /* Click passes through to the venue card, which opens the popup */
+  pointer-events:none !important;
+}
+
+/* Make sure the photo itself does not create another click layer */
+.gallery-item.venue-popup-trigger img{
+  pointer-events:none !important;
+}
+
+/* Keep the room-name caption small and clear */
+.gallery-item.venue-popup-trigger figcaption{
+  position:absolute !important;
+  z-index:7 !important;
+
+  left:14px !important;
+  right:auto !important;
+  bottom:14px !important;
+  top:auto !important;
+
+  width:auto !important;
+  max-width:calc(100% - 28px) !important;
+
+  padding:8px 13px !important;
+
+  background:rgba(0,0,0,.72) !important;
+  color:#ffffff !important;
+
+  border:1px solid rgba(255,255,255,.18) !important;
+  border-radius:999px !important;
+
+  font-size:.68rem !important;
+  line-height:1.2 !important;
+  text-align:left !important;
+
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+
+  pointer-events:none !important;
+}
+
+/* Optional hover polish */
+.gallery-item.venue-popup-trigger:hover::after{
+  background:var(--red,#d90824) !important;
+  border-color:var(--red,#d90824) !important;
+}
+
+/* Mobile */
+@media (max-width:640px){
+  .gallery-item.venue-popup-trigger::after,
+  .gallery-item.venue-popup-trigger.protected-image-zone::after{
+    top:10px !important;
+    left:10px !important;
+    padding:8px 12px !important;
+    font-size:.61rem !important;
+  }
+
+  .gallery-item.venue-popup-trigger figcaption{
+    left:10px !important;
+    right:10px !important;
+    bottom:10px !important;
+    width:auto !important;
+    max-width:none !important;
+    border-radius:12px !important;
+    text-align:center !important;
+  }
+}
