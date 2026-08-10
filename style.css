@@ -3302,3 +3302,71 @@ body{
     width:175px!important;
   }
 }
+
+/* ==========================================================
+   FINAL ELEGANT PROFESSIONAL SYSTEM
+   ========================================================== */
+:root{
+  --lux-black:#070707;--lux-white:#fff;--lux-border:#d8d8d8;--lux-text:#171717;--lux-muted:#666;
+  --lux-silver:#c8c8c8;--lux-red:#d90824;--lux-red-bright:#ef1733;--lux-card-radius:18px;
+  --lux-section-space:112px;--lux-section-space-mobile:76px;--lux-card-shadow:0 16px 40px rgba(0,0,0,.12);
+}
+body{font-family:"Montserrat",sans-serif;font-size:15px;line-height:1.75}
+h1,h2,h3,.service-body h3,.rate-card h3,.info-card h3,.faq-item summary{font-family:"Cormorant Garamond",serif!important}
+.section,.site-section,.trust-strip,.contact-section,.business-hours-section,.rates-cta{padding-top:var(--lux-section-space)!important;padding-bottom:var(--lux-section-space)!important}
+.section-heading,.why-heading,.consistent-heading,.gallery-header,.kylie-gallery-heading,.business-hours-intro,.contact-copy{margin-bottom:52px!important}
+.section-heading h2,.why-heading h2,.consistent-heading h2,.gallery-header h2,.kylie-gallery-heading h2,.business-hours-intro h2,.contact-copy h2,.about-copy h2{font-size:clamp(3rem,5vw,4rem)!important;line-height:1!important;font-weight:500!important;letter-spacing:-.025em!important}
+.service-body h3,.rate-card h3,.info-card h3,.faq-item summary{font-size:clamp(1.65rem,2.2vw,1.875rem)!important;line-height:1.08!important;font-weight:600!important}
+p,li,.service-body p,.rate-card p,.info-card p,.faq-item p,.hours-lead,.contact-copy p{font-size:clamp(.875rem,1.2vw,1rem)!important}
+.eyebrow,.eyebrow.dark,.live-status-label{font-size:clamp(.6875rem,1vw,.75rem)!important;letter-spacing:.22em!important;font-weight:600!important}
+.service-card,.rate-card:not(.featured),.info-card,.faq-item,.hours-card,.live-hours-card,.contact-btn,.about-points>div,.trust-grid article{background:#fff!important;color:var(--lux-text)!important;border:1px solid var(--lux-border)!important;border-radius:18px!important;box-shadow:var(--lux-card-shadow)!important}
+.service-card:hover,.rate-card:not(.featured):hover,.info-card:hover,.faq-item:hover,.live-hours-card:hover,.contact-btn:hover,.trust-grid article:hover{transform:translateY(-3px)!important;border-color:#bfc0c2!important;box-shadow:0 20px 46px rgba(0,0,0,.15)!important}
+.service-body h3,.rate-card:not(.featured) h3,.info-card h3,.faq-item summary,.live-hours-card strong,.contact-btn strong,.about-points strong,.trust-grid strong{color:#111!important}
+.service-body p,.rate-card:not(.featured) p,.rate-card:not(.featured) li span,.info-card p,.info-card li,.faq-item p,.live-hours-card span,.contact-btn span,.about-points span,.trust-grid span{color:#666!important}
+.service-body,.rate-card,.info-card,.live-hours-card{padding:26px!important}
+.rate-card.featured{background:linear-gradient(155deg,#161616,#050505)!important;color:#fff!important;border:1px solid var(--lux-red)!important;border-radius:18px!important;box-shadow:0 20px 50px rgba(0,0,0,.28)!important}
+.rate-card.featured h3,.rate-card.featured p,.rate-card.featured li span{color:#fff!important}.rate-card.featured li{border-color:rgba(255,255,255,.15)!important}.rate-card.featured strong,.rate-card.featured .single-price{color:var(--lux-red-bright)!important}.rate-card.featured .rate-book-btn,.rate-card.featured .popular{color:#fff!important;background:var(--lux-red)!important;border-color:var(--lux-red)!important}
+.service-grid{gap:24px!important;align-items:stretch}.service-card{display:flex!important;flex-direction:column;height:100%;overflow:hidden}.service-image{width:100%;height:auto!important;aspect-ratio:3/2;flex:none!important;overflow:hidden;background:#0b0b0b;border-bottom:1px solid #e2e2e2!important}.service-image img{width:100%;height:100%;object-fit:cover!important;object-position:center;display:block;filter:grayscale(1) contrast(1.05) brightness(.93)!important}.service-card:hover .service-image img{transform:scale(1.03)!important;filter:grayscale(1) contrast(1.07) brightness(.96)!important}.service-body{display:flex!important;flex:1 1 auto;flex-direction:column;height:auto!important}.service-description{min-height:8.4em!important;margin:14px 0 0!important;line-height:1.7!important}
+.kylie-gallery-block{margin-top:92px!important;padding-top:70px!important;border-top:1px solid rgba(220,220,220,.13)!important}.kylie-gallery-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important}.kylie-gallery-item{position:relative;margin:0!important;overflow:hidden;width:100%;aspect-ratio:3/4!important;min-height:0!important;border:1px solid rgba(210,210,210,.28)!important;border-radius:16px!important;background:#080808;box-shadow:none!important}.kylie-gallery-item img{width:100%;height:100%!important;min-height:0!important;object-fit:cover!important;display:block}.kylie-gallery-item figcaption{display:none!important}
+.gallery-track{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important}.gallery-item{width:100%;min-width:0!important;height:auto!important;aspect-ratio:4/3!important;overflow:hidden;border:1px solid rgba(220,220,220,.22)!important;border-radius:16px!important;background:#0a0a0a!important;box-shadow:none!important}.gallery-item img{width:100%;height:100%!important;object-fit:cover!important}.gallery-item figcaption{left:14px!important;right:14px!important;bottom:12px!important;width:auto!important;text-align:center!important}
+.business-hours-layout{display:grid!important;grid-template-columns:minmax(0,.95fr) minmax(360px,.8fr)!important;gap:54px!important;align-items:start!important}.weekly-hours,.compact-weekly-hours{margin-top:28px!important;border:0!important;border-radius:0!important;background:transparent!important}.weekly-hours-row{display:grid!important;grid-template-columns:70px 1fr!important;gap:20px!important;align-items:center!important;padding:9px 0!important;border-bottom:1px solid rgba(220,220,220,.10)!important;background:transparent!important}.weekly-hours-row span{color:#d0d0d0!important;font-weight:500!important}.weekly-hours-row strong{color:#fff!important;font-size:.875rem!important;text-align:right!important;font-weight:500!important}.weekly-hours-row.sunday span,.weekly-hours-row.sunday strong{color:var(--lux-red-bright)!important}.live-hours-card{position:sticky!important;top:110px!important;padding:28px!important}.live-status-text{font-size:clamp(2rem,3.5vw,2.65rem)!important;line-height:1!important}.compact-today-line{display:flex;justify-content:space-between;gap:18px;margin:18px 0 8px;padding-top:16px;border-top:1px solid #e3e3e3}.compact-today-line span{color:#777!important;font-size:.75rem!important;text-transform:uppercase;letter-spacing:.08em}.compact-today-line strong{color:#111!important;font-size:.9rem!important}
+.contact-grid{gap:56px!important}.contact-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}.contact-btn{min-height:104px!important;padding:24px!important;justify-content:center!important}.contact-btn.whatsapp-card{background:linear-gradient(135deg,#b90720,var(--lux-red))!important;color:#fff!important;border-color:var(--lux-red)!important;box-shadow:0 16px 36px rgba(217,8,36,.18)!important}.contact-btn.whatsapp-card strong,.contact-btn.whatsapp-card span{color:#fff!important}
+.site-header{background:rgba(5,5,5,.94)!important}.nav-wrap{min-height:76px!important;gap:24px!important}.main-nav{gap:24px!important}.main-nav a{padding:26px 0 23px!important;font-size:.69rem!important;letter-spacing:.11em!important;font-weight:500!important;color:#d0d0d0!important}.main-nav a:hover,.main-nav a.active{color:#fff!important}.nav-cta{min-height:42px!important;padding:0 18px!important;border-radius:999px!important}
+.age-gate{background:rgba(0,0,0,.965)!important;backdrop-filter:blur(24px)!important}.age-card{width:min(440px,calc(100% - 28px))!important;padding:34px 30px 30px!important;border:1px solid rgba(220,220,220,.24)!important;border-radius:20px!important;background:linear-gradient(155deg,#141414,#050505)!important;box-shadow:0 35px 110px rgba(0,0,0,.75)!important}.age-logo{width:min(220px,74%)!important;max-height:120px!important;margin:0 auto 20px!important}.age-card h2{margin:0 0 12px!important;color:#fff!important;font-family:"Cormorant Garamond",serif!important;font-size:4.3rem!important;line-height:.9!important}.age-card p{max-width:340px!important;margin:0 auto 24px!important;color:#bdbdbd!important;font-size:.875rem!important;line-height:1.7!important}.age-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important}
+.about-grid,.contact-grid,.business-hours-layout{row-gap:56px!important}.about-copy>p:not(.eyebrow){margin-bottom:18px!important}.about-points{margin-top:40px!important;gap:16px!important}.rate-grid,.info-grid{gap:24px!important}.faq-list{gap:16px!important}.section-heading::after,.why-heading::after,.consistent-heading::after,.gallery-header>div:first-child::after,.kylie-gallery-heading::after,.contact-copy::after,.business-hours-intro::after,.about-copy::after{content:""!important;display:block!important;width:76px!important;height:1px!important;margin-top:22px!important;border:0!important;background:linear-gradient(90deg,var(--lux-red),rgba(220,220,220,.52),transparent)!important}
+@media(max-width:1000px){.gallery-track{grid-template-columns:repeat(2,minmax(0,1fr))!important}.business-hours-layout{grid-template-columns:1fr!important}.live-hours-card{position:relative!important;top:auto!important;max-width:680px!important}.contact-actions{grid-template-columns:1fr!important}}
+@media(max-width:760px){.section,.site-section,.trust-strip,.contact-section,.business-hours-section,.rates-cta{padding-top:var(--lux-section-space-mobile)!important;padding-bottom:var(--lux-section-space-mobile)!important}.section-heading,.why-heading,.consistent-heading,.gallery-header,.kylie-gallery-heading,.business-hours-intro,.contact-copy{margin-bottom:38px!important}.service-description{min-height:0!important}.kylie-gallery-grid{grid-template-columns:1fr!important;gap:16px!important}.gallery-track{grid-template-columns:1fr!important}.age-actions{grid-template-columns:1fr!important}}
+
+/* ==========================================================
+   LIVE HOURS REPAIR
+   ========================================================== */
+
+.compact-current-time{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  margin:0 0 10px;
+  padding:10px 0 16px;
+  border-bottom:1px solid #e3e3e3;
+}
+
+.compact-current-time span{
+  color:#777!important;
+  font-size:.75rem!important;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.compact-current-time strong{
+  color:#111!important;
+  font-size:.9rem!important;
+}
+
+@media (max-width:480px){
+  .compact-today-line,
+  .compact-current-time{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:3px;
+  }
+}

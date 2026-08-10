@@ -215,3 +215,37 @@ to discourage casual saving rather than provide absolute copy protection.
 ABOUT KYLIE LOGO FRAME UPDATE
 - Replaced the About Kylie logo with the newly uploaded logo.
 - Reduced the outer frame, inner frame, and logo size for a tighter fit.
+
+
+ELEGANT PROFESSIONAL SYSTEM REFRESH
+- Unified white card style; one black featured rate card.
+- Stricter typography hierarchy and more whitespace.
+- Service images normalized to 3:2.
+- Gallery Kylie changed to editorial 3x2 portrait grid.
+- Venue Gallery kept landscape with captions.
+- Business Hours compacted around live status.
+- Contact simplified to Call / WhatsApp / Email.
+- Navigation shortened.
+- 18+ screen simplified and refined.
+
+LIVE BUSINESS HOURS REPAIR
+--------------------------
+Fixed the live-hours status after the compact redesign.
+
+Cause:
+The compact layout removed the businessLocalTime element, but script.js still
+required that element before it would update the business status. This caused:
+- "Checking hours…"
+- Today's hours "—"
+- "Checking the current local time…"
+to remain on screen indefinitely.
+
+Fix:
+- Current status now updates even if optional layout elements are missing.
+- Re-added a compact Johannesburg-time display.
+- Added a safe fallback if timezone calculation ever fails.
+- Live status updates immediately and refreshes every 60 seconds.
+
+Schedule:
+Mon-Sat 10:00–20:00
+Sun     10:00–18:00
