@@ -303,3 +303,141 @@ document.addEventListener("contextmenu", event => {
     event.preventDefault();
   }
 });
+
+
+
+// ==========================================================
+// VENUE GALLERY POPUPS
+// Robust delegated version: works regardless of script position.
+// ==========================================================
+
+function getVenueModalElements() {
+  return {
+    modal: document.getElementById("venueModal"),
+    image: document.getElementById("venueModalImage"),
+    title: document.getElementById("venueModalTitle"),
+    description: document.getElementById("venueModalDescription")
+  };
+}
+
+function openVenueModal(trigger) {
+  const { modal, image, title, description } = getVenueModalElements();
+
+  if (!modal || !trigger) return;
+
+  const venueTitle = trigger.dataset.venueTitle || "";
+  const venueDescription = trigger.dataset.venueDescription || "";
+  const venueImage = trigger.dataset.venueImage || "";
+
+  if (title) {
+    title.textContent = venueTitle;
+  }
+
+  if (description) {
+    description.textContent = venueDescription;
+  }
+
+  if (image) {
+    image.src = venueImage;
+    image.alt = venueTitle;
+    image.setAttribute("draggable", "false");
+  }
+
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("venue-modal-open");
+
+  requestAnimationFrame(() => {
+    modal.querySelector(".venue-modal-close")?.focus();
+  });
+}
+
+function closeVenueModal() {
+  const { modal, image } = getVenueModalElements();
+
+  if (!modal) return;
+
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("venue-modal-open");
+
+  if (image) {
+    image.src = "";
+    image.alt = "";
+  }
+}
+
+// Event delegation means the venue cards continue working even if
+// their inner image/caption/protection overlay receives the click.
+document.addEventListener("click", event => {
+  const trigger = event.target.closest?.(".venue-popup-trigger");
+
+  if (trigger) {
+    event.preventDefault();
+    openVenueModal(trigger);
+    return;
+  }
+
+  if (event.target.closest?.("[data-venue-close]")) {
+    event.preventDefault();
+    closeVenueModal();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  const activeTrigger = event.target.closest?.(".venue-popup-trigger");
+
+  if (
+    activeTrigger &&
+    (event.key === "Enter" || event.key === " ")
+  ) {
+    event.preventDefault();
+    openVenueModal(activeTrigger);
+    return;
+  }
+
+  if (
+    event.key === "Escape" &&
+    document.getElementById("venueModal")?.classList.contains("open")
+  ) {
+    closeVenueModal();
+  }
+});
+
+// ==========================================================
+// MEDIA DOWNLOAD DETERRENTS
+// These discourage casual saving but cannot make public
+// website media technically impossible to retrieve.
+// ==========================================================
+
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
+});
+
+document.querySelectorAll("video").forEach(video => {
+  video.setAttribute("draggable", "false");
+  video.setAttribute("controlsList", "nodownload noplaybackrate");
+  video.setAttribute("disablePictureInPicture", "");
+});
+
+document.addEventListener("dragstart", event => {
+  if (
+    event.target instanceof HTMLImageElement ||
+    event.target instanceof HTMLVideoElement
+  ) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("contextmenu", event => {
+  const target = event.target;
+
+  if (
+    target instanceof HTMLImageElement ||
+    target instanceof HTMLVideoElement ||
+    target.closest?.(".protected-image-zone") ||
+    target.closest?.(".protected-video-zone")
+  ) {
+    event.preventDefault();
+  }
+});

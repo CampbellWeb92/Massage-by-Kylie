@@ -3386,3 +3386,409 @@ p,li,.service-body p,.rate-card p,.info-card p,.faq-item p,.hours-lead,.contact-
     gap:3px;
   }
 }
+
+
+
+/* ==========================================================
+   VIDEO GALLERY + VENUE POPUPS + MEDIA PROTECTION
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   Video Gallery
+   ---------------------------------------------------------- */
+.video-gallery-block{
+  margin-top:92px;
+  padding-top:70px;
+  border-top:1px solid rgba(220,220,220,.13);
+}
+
+.video-gallery-heading{
+  max-width:760px;
+  margin-bottom:32px;
+}
+
+.video-gallery-heading h2{
+  color:#fff;
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(3rem,5vw,4rem);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.025em;
+}
+
+.video-gallery-heading h2 span{
+  color:var(--red);
+  font-style:italic;
+}
+
+.video-gallery-heading > p:not(.eyebrow){
+  margin-top:14px;
+  color:#a7a7a7;
+}
+
+.video-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.video-gallery-item{
+  overflow:hidden;
+  margin:0;
+  border:1px solid rgba(216,216,216,.22);
+  border-radius:18px;
+  background:#080808;
+}
+
+.video-gallery-item video{
+  width:100%;
+  aspect-ratio:16 / 9;
+  display:block;
+  object-fit:cover;
+  background:#000;
+}
+
+.video-gallery-empty{
+  color:#999;
+  font-size:.9rem;
+}
+
+/* ----------------------------------------------------------
+   Venue gallery popup triggers
+   ---------------------------------------------------------- */
+.venue-popup-trigger{
+  cursor:pointer;
+}
+
+.venue-popup-trigger::after{
+  content:"View Room";
+  position:absolute;
+  z-index:4;
+  right:14px;
+  top:14px;
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  background:rgba(0,0,0,.70);
+  color:#fff;
+  font-size:.62rem;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  backdrop-filter:blur(8px);
+  pointer-events:none;
+  opacity:.88;
+}
+
+.venue-popup-trigger:focus-visible{
+  outline:3px solid rgba(217,8,36,.7);
+  outline-offset:4px;
+}
+
+/* ----------------------------------------------------------
+   Venue modal
+   ---------------------------------------------------------- */
+.venue-modal{
+  position:fixed;
+  inset:0;
+  z-index:12000;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .25s ease,visibility .25s ease;
+}
+
+.venue-modal.open{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+
+.venue-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  backdrop-filter:blur(18px);
+}
+
+.venue-modal-dialog{
+  position:relative;
+  z-index:1;
+  width:min(920px,100%);
+  max-height:min(86vh,820px);
+  overflow:auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);
+  border:1px solid rgba(220,220,220,.24);
+  border-radius:22px;
+  background:#0b0b0b;
+  box-shadow:0 36px 120px rgba(0,0,0,.72);
+}
+
+.venue-modal-close{
+  position:absolute;
+  z-index:5;
+  top:14px;
+  right:16px;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.20);
+  border-radius:50%;
+  background:rgba(0,0,0,.76);
+  color:#fff;
+  font-size:1.8rem;
+  line-height:1;
+  cursor:pointer;
+}
+
+.venue-modal-close:hover{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.venue-modal-media{
+  min-height:460px;
+  background:#050505;
+}
+
+.venue-modal-media img{
+  width:100%;
+  height:100%;
+  min-height:460px;
+  object-fit:cover;
+}
+
+.venue-modal-copy{
+  padding:52px 38px 40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.venue-modal-copy h2{
+  color:#fff;
+  font-size:clamp(2.5rem,4vw,4rem)!important;
+  line-height:1;
+  margin-bottom:22px;
+}
+
+.venue-modal-copy > p:not(.eyebrow){
+  color:#c4c4c4;
+  line-height:1.8;
+}
+
+/* Lock page behind modal */
+body.venue-modal-open{
+  overflow:hidden;
+}
+
+/* ----------------------------------------------------------
+   Media download deterrents
+   ---------------------------------------------------------- */
+.protected-image,
+.protected-video{
+  -webkit-user-drag:none;
+  user-select:none;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -webkit-touch-callout:none;
+}
+
+img.protected-image{
+  pointer-events:none;
+}
+
+.protected-image-zone{
+  position:relative;
+  -webkit-touch-callout:none;
+}
+
+.protected-video-zone{
+  position:relative;
+  -webkit-touch-callout:none;
+}
+
+/* Remove any visible download-protection notice if an older build had one */
+.image-protection-note{
+  display:none!important;
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width:900px){
+  .venue-modal-dialog{
+    grid-template-columns:1fr;
+    max-width:720px;
+  }
+
+  .venue-modal-media,
+  .venue-modal-media img{
+    min-height:340px;
+    max-height:48vh;
+  }
+
+  .venue-modal-copy{
+    padding:30px 26px 34px;
+  }
+}
+
+@media (max-width:760px){
+  .video-gallery-block{
+    margin-top:64px;
+    padding-top:50px;
+  }
+
+  .video-gallery-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .venue-modal{
+    padding:14px;
+  }
+
+  .venue-modal-dialog{
+    border-radius:18px;
+  }
+
+  .venue-modal-media,
+  .venue-modal-media img{
+    min-height:260px;
+  }
+
+  .venue-modal-copy{
+    padding:28px 20px 26px;
+  }
+
+  .venue-popup-trigger::after{
+    right:10px;
+    top:10px;
+  }
+}
+
+/* ==========================================================
+   VENUE POPUP CLICK FIX
+   ========================================================== */
+
+/* The venue card itself owns the click.
+   Don't let a generic protection overlay become an unrelated hit target. */
+.gallery-item.venue-popup-trigger.protected-image-zone::after{
+  pointer-events:none!important;
+}
+
+/* Keep the entire venue card clickable. */
+.gallery-item.venue-popup-trigger{
+  position:relative;
+  cursor:pointer!important;
+  touch-action:manipulation;
+}
+
+.gallery-item.venue-popup-trigger img{
+  pointer-events:none!important;
+}
+
+.gallery-item.venue-popup-trigger figcaption{
+  pointer-events:none!important;
+}
+
+/* Modal must always sit above the sticky header/mobile bar. */
+#venueModal{
+  z-index:20000!important;
+}
+
+#venueModal.open{
+  display:grid!important;
+}
+
+
+/* ==========================================================
+   CAMPBELLWEB FOOTER CREDIT
+   ========================================================== */
+
+.footer-copyright{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0 0;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.08);
+
+  color:#777;
+  font-size:.72rem;
+  text-align:center;
+}
+
+.footer-divider{
+  color:#555;
+}
+
+.campbellweb-credit{
+  color:#bdbdbd;
+  text-decoration:none;
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+.campbellweb-credit:hover{
+  color:var(--red);
+}
+
+@media (max-width:600px){
+  .footer-copyright{
+    gap:6px;
+    line-height:1.7;
+  }
+}
+
+
+/* ==========================================================
+   VENUE GALLERY CAPTION FIX
+   Small dark translucent labels instead of grey blocks
+   ========================================================== */
+
+.gallery-item figcaption{
+  left:14px !important;
+  right:auto !important;
+  bottom:14px !important;
+  width:auto !important;
+  max-width:calc(100% - 28px) !important;
+
+  padding:8px 14px !important;
+
+  background:rgba(0,0,0,.72) !important;
+  color:#ffffff !important;
+
+  border:1px solid rgba(255,255,255,.20) !important;
+  border-radius:999px !important;
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  text-align:left !important;
+  line-height:1.25;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);
+
+  pointer-events:none !important;
+}
+
+@media (max-width:640px){
+  .gallery-item figcaption{
+    left:10px !important;
+    right:10px !important;
+    bottom:10px !important;
+    width:auto !important;
+    max-width:none !important;
+    border-radius:14px !important;
+    text-align:center !important;
+  }
+}

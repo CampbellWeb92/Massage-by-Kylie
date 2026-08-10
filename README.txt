@@ -249,3 +249,83 @@ Fix:
 Schedule:
 Mon-Sat 10:00–20:00
 Sun     10:00–18:00
+
+VIDEO GALLERY / VENUE POPUPS / MEDIA PROTECTION
+-----------------------------------------------
+Video Gallery:
+- Added directly below Gallery Kylie.
+- Uses video files already included in the uploaded website package.
+- Video files found:
+  - videos/5.mp4
+  - videos/kylie2.mp4
+  - videos/kylie3.mp4
+  - videos/kylie4.mp4
+  - videos/kylie.mp4
+
+Venue Gallery:
+- Each of the four venue images is now clickable.
+- Clicking a venue opens a responsive modal with the full image and room description.
+- Supports mouse, keyboard Enter/Space, Escape to close, and backdrop close.
+
+Descriptions:
+- Tub Treatment Room:
+  Full Ensuite Bathroom, Fluffy Towels and Essential Toiletries:
+  Shampoo, Bodywash, Mouthwash, Lotion & Deodorant.
+
+- The Gravity Table Treatment Room:
+  Full Ensuite Bathroom with Fluffy Towels and Essential Toiletries:
+  Shampoo, Bodywash, Mouthwash, Lotion & Deodorant.
+
+- Sensual Massage Treatment Rooms:
+  All Rooms are equipped with an ensuite shower, Fluffy Towels and Essential Toiletries:
+  Shampoo, Bodywash, Mouthwash, Lotion & Deodorant.
+
+- Couples Massage Treatment Room:
+  Full ensuite Bathroom, Fluffy Towels and Essential Toiletries:
+  Shampoo, Bodywash, Mouthwash, Lotion & Deodorant.
+
+Media protection:
+- Image dragging disabled.
+- Video dragging disabled.
+- Right-click blocked on protected images/videos.
+- Long-press callout discouraged where supported.
+- Browser video download option hidden where controlsList=nodownload is supported.
+- Picture-in-picture disabled.
+
+IMPORTANT:
+Media on a public website cannot be made completely impossible to download.
+A determined visitor can still retrieve public files using developer tools,
+network requests, browser cache, screen recording, or screenshots.
+These measures are intended to prevent casual downloading.
+
+VENUE GALLERY POPUP FIX
+-----------------------
+Fixed the Venue Gallery pop-up.
+
+Cause:
+- script.js was loaded before the venue modal HTML.
+- The JavaScript stored venueModal as null when the page first loaded.
+- Clicking a venue card therefore returned immediately without opening anything.
+
+Fix:
+- Moved script.js to the true end of the body, after the modal HTML.
+- Rebuilt the venue popup logic with delegated click handling.
+- Popup clicks now work even when the image protection layer is present.
+- Enter/Space opens a selected venue card.
+- Escape, backdrop click, and the X button close the modal.
+- Modal z-index was strengthened so it appears above the header/mobile bar.
+
+KYLIE3 VIDEO REMOVAL + CAMPBELLWEB CREDIT
+-----------------------------------------
+- Removed videos/kylie3.mp4 from the website package.
+- Removed kylie3.mp4 from the Video Gallery.
+- Added footer copyright:
+  © 2026 Massage by Kylie. All rights reserved. | Created by CampbellWeb
+- "Created by CampbellWeb" links to:
+  https://campbellweb.co.za
+
+VENUE GALLERY CAPTION FIX
+-------------------------
+- Removed the large pale/grey caption blocks over the Venue Gallery images.
+- Venue names now appear as compact dark translucent labels.
+- Mobile labels are kept readable without obscuring the photos.
