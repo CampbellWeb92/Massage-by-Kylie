@@ -3919,3 +3919,111 @@ img.protected-image{
     text-align:center !important;
   }
 }
+
+/* ==========================================================
+   NEAT CENTRED FOOTER
+   ========================================================== */
+
+.footer-grid{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-wrap:wrap !important;
+
+  gap:18px 28px !important;
+
+  width:100%;
+  text-align:center !important;
+}
+
+/* Footer logo */
+.footer-logo{
+  width:170px !important;
+  height:55px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:0 !important;
+}
+
+/* Copyright + CampbellWeb */
+.footer-copyright{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex-wrap:wrap !important;
+
+  gap:7px !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  border-top:0 !important;
+
+  color:#777;
+  font-size:.72rem;
+  line-height:1.5;
+  text-align:center !important;
+}
+
+/* CampbellWeb divider */
+.footer-divider{
+  color:#555;
+}
+
+/* CampbellWeb link */
+.campbellweb-credit{
+  color:#bdbdbd;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.campbellweb-credit:hover{
+  color:var(--red);
+}
+
+/* Contact icons */
+.footer-contact-icons{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:8px !important;
+}
+
+/* Privacy / Terms */
+.footer-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+
+  margin:0 !important;
+  white-space:nowrap;
+}
+
+/* Keep footer vertically balanced */
+.site-footer{
+  padding:28px 20px !important;
+}
+
+@media (max-width:760px){
+
+  .footer-grid{
+    flex-direction:column !important;
+    gap:14px !important;
+  }
+
+  .footer-logo{
+    width:155px !important;
+    height:auto !important;
+  }
+
+  .footer-copyright{
+    max-width:340px;
+  }
+
+  .footer-contact-icons,
+  .footer-links{
+    justify-content:center !important;
+  }
+
+}
