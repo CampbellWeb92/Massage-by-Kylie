@@ -4072,13 +4072,10 @@ img.protected-image{
 }
 
 @media (min-width:1001px){
-  .business-hours-layout{
-    align-items:center !important;
-  }
-
   .live-hours-card{
     position:relative !important;
     top:auto !important;
+    grid-column:1 / -1 !important;
     width:100% !important;
     max-width:520px !important;
     justify-self:center !important;
