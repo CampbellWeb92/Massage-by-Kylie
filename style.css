@@ -4059,3 +4059,28 @@ img.protected-image{
     display:grid !important;
   }
 }
+/* ==========================================================
+   REQUESTED LAYOUT ADJUSTMENTS — 2026-08-12
+   1. Hide the header WhatsApp CTA whenever the mobile menu is used.
+   2. Centre the Current Status card on desktop.
+   ========================================================== */
+
+@media (max-width:1000px){
+  .site-header .nav-cta{
+    display:none !important;
+  }
+}
+
+@media (min-width:1001px){
+  .business-hours-layout{
+    align-items:center !important;
+  }
+
+  .live-hours-card{
+    position:relative !important;
+    top:auto !important;
+    width:100% !important;
+    max-width:520px !important;
+    justify-self:center !important;
+  }
+}
